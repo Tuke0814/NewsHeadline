@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.bawei.newsheadline_demo.MainActivity">
+
+
+            <TextView
+                android:id="@+id/headtitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:background="@color/colorAccent"
+                android:text="今日头条" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabIndicatorHeight="2dp"
+                app:tabMode="scrollable">
+            </android.support.design.widget.TabLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v4.view.ViewPager>
+
+            <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
+                android:id="@+id/slidingmenu"
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:background="#000000">
+            </com.jeremyfeinstein.slidingmenu.lib.SlidingMenu>
+    </LinearLayout>
