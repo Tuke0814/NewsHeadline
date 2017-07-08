@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     tools:context="com.bawei.newsheadline_demo.MainActivity">
 
-
+            <ImageView
+                android:id="@+id/toutitle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/default_round_head" />
             <TextView
                 android:id="@+id/headtitle"
                 android:layout_width="match_parent"
@@ -18,6 +21,7 @@
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tablayout"
+                android:layout_below="@+id/headtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabIndicatorColor="@color/colorAccent"
@@ -27,14 +31,17 @@
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
+                android:layout_below="@+id/tablayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </android.support.v4.view.ViewPager>
 
             <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
                 android:id="@+id/slidingmenu"
-                android:layout_width="100dp"
-                android:layout_height="200dp"
-                android:background="#000000">
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/default_round_head"
+                android:onClick="dianji"
+                >
             </com.jeremyfeinstein.slidingmenu.lib.SlidingMenu>
-    </LinearLayout>
+    </RelativeLayout>
