@@ -83,10 +83,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabLayout.setupWithViewPager(pager);
     }
 
+    //qq登录
     @Override
     public void onClick(View v) {
         UmengHeper.getAuthQQ(MainActivity.this,api,MainActivity.this);
     }
+    //微信登录
     public void onClick1(View v){
         UmengHeper.getAuthWEIXIN(MainActivity.this,api,MainActivity.this);
     }
