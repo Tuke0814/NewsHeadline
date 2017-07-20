@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bawei.newsheadline_demo.activity.DownLoadActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/lefticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_back_detail_pressed_night"/>
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="29dp"
+            android:layout_weight="2"
+            android:gravity="center"
+           android:layout_gravity="center"
+            android:text="离线下载"/>
+
+        <TextView
+            android:id="@+id/tvright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="下载"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/mytv"
+        android:layout_below="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="我的频道"/>
+    <ListView
+        android:id="@+id/downlist"
+        android:layout_below="@+id/mytv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
+</RelativeLayout>

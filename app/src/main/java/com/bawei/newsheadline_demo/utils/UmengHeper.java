@@ -1,4 +1,4 @@
-package com.bawei.newsheadline_demo;
+package com.bawei.newsheadline_demo.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,41 +22,10 @@ public class UmengHeper {
         this.activity = activity;
     }
 
-    public static void getAuthWEIXIN(final Context context, UMShareAPI api,Activity activity){
-        if(api.isInstall(activity, SHARE_MEDIA.WEIXIN)){
-            Toast.makeText(context, "已经安装微信", Toast.LENGTH_SHORT).show();
-            api.doOauthVerify(activity, SHARE_MEDIA.WEIXIN, new UMAuthListener() {
-                @Override
-                public void onStart(SHARE_MEDIA share_media) {
-
-                }
-
-                @Override
-                public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
-                    Toast.makeText(context, "微信登陆成功", Toast.LENGTH_SHORT).show();
-
-                }
-
-                @Override
-                public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
-                    Toast.makeText(context, "微信登陆错误", Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onCancel(SHARE_MEDIA share_media, int i) {
-                    Toast.makeText(context, "用户取消登陆", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }else {
-            Toast.makeText(context, "没有安装微信", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    public static void getAuthQQ(final Context context, UMShareAPI api,Activity activity){
+    public static void getAuthQQ(final Context context, final UMShareAPI api, Activity activity){
         if(api.isInstall(activity, SHARE_MEDIA.QQ)){
             Toast.makeText(context, "已经安装QQ", Toast.LENGTH_SHORT).show();
-            api.doOauthVerify(activity, SHARE_MEDIA.WEIXIN, new UMAuthListener() {
+            api.doOauthVerify(activity, SHARE_MEDIA.QQ, new UMAuthListener() {
                 @Override
                 public void onStart(SHARE_MEDIA share_media) {
 
@@ -82,4 +51,35 @@ public class UmengHeper {
             Toast.makeText(context, "没有安装QQ", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public static void getAuthXL(final Context context, UMShareAPI api,Activity activity){
+        if(api.isInstall(activity, SHARE_MEDIA.SINA)){
+            Toast.makeText(context, "已经安装新浪", Toast.LENGTH_SHORT).show();
+            api.doOauthVerify(activity, SHARE_MEDIA.QQ, new UMAuthListener() {
+                @Override
+                public void onStart(SHARE_MEDIA share_media) {
+
+                }
+
+                @Override
+                public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
+                    Toast.makeText(context, "新浪登陆成功", Toast.LENGTH_SHORT).show();
+
+                }
+
+                @Override
+                public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
+                    Toast.makeText(context, "新浪登陆错误", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onCancel(SHARE_MEDIA share_media, int i) {
+                    Toast.makeText(context, "用户取消登陆", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }else {
+            Toast.makeText(context, "没有安装新浪", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

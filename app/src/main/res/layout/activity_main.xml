@@ -3,45 +3,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/mainBackground"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.bawei.newsheadline_demo.MainActivity">
+    tools:context=".activity.MainActivity">
 
-            <ImageView
-                android:id="@+id/toutitle"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/default_round_head" />
-            <TextView
-                android:id="@+id/headtitle"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="center"
-                android:background="@color/colorAccent"
-                android:text="今日头条" />
+    <LinearLayout
+        android:id="@+id/lineartou"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
 
-            <android.support.design.widget.TabLayout
+        <ImageView
+            android:id="@+id/toutitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="4"
+            android:onClick="tou"
+            android:background="@drawable/default_round_head" />
+        <TextView
+            android:id="@+id/headtitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="今日头条" />
+        <ImageView
+            android:id="@+id/weititle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="4"
+            android:onClick="foot"
+            android:background="@drawable/mz_researchicon_tabbar" />
+    </LinearLayout>
+
+
+    <android.support.design.widget.TabLayout
                 android:id="@+id/tablayout"
-                android:layout_below="@+id/headtitle"
+                android:layout_below="@+id/lineartou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:tabIndicatorColor="@color/colorAccent"
                 app:tabIndicatorHeight="2dp"
-                app:tabMode="scrollable">
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/colorAccent"
+                app:tabTextColor="#000000">
             </android.support.design.widget.TabLayout>
+    <TextView
+        android:id="@+id/tvs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="+"
+        android:background="#ffffff"
+        android:onClick="onClick"
+        android:layout_marginTop="45dp"
+        android:textSize="45sp"/>
+    <LinearLayout
+        android:id="@+id/ss_time"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tablayout"
+        android:gravity="center_horizontal" >
+
+        <TextView
+            android:id="@+id/tv_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_todays"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
-                android:layout_below="@+id/tablayout"
+                android:layout_below="@+id/ss_time"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </android.support.v4.view.ViewPager>
 
             <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
-                android:id="@+id/slidingmenu"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/default_round_head"
-                android:onClick="dianji"
+                android:id="@+id/slidingmenuss"
+                android:layout_below="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 >
             </com.jeremyfeinstein.slidingmenu.lib.SlidingMenu>
     </RelativeLayout>
